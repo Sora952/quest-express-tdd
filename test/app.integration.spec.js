@@ -15,7 +15,7 @@ describe('Test routes', () => {
     // Write your tests HERE!
     it('get id du bookmark manquant', (done) => {
       request(app)
-        .get('/bookmarks/:id')
+        .get('/bookmarks/404')
         .expect(404)
         .expect('Content-Type', /json/)
         .then(response => {
@@ -27,7 +27,7 @@ describe('Test routes', () => {
 
     it('get id du bookmark trouvé', (done) => {
       request(app)
-      .get('/bookmarks/:id')
+      .get('/bookmarks/1')
       .expect(200)
       .expect('Content-Type', /json/)
       .then(response => {
